@@ -1,0 +1,1 @@
+Add the discordbot token into token.txt file in root
