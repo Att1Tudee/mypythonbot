@@ -39,14 +39,14 @@ class Commands(commands.Cog):
 
     @commands.command()
     @commands.has_permissions(manage_messages=True)
-    async def settimee(self, ctx, *, timee):
-                embed = discord.Embed(description=f"```yaml\nSetting this post time:\n{timee}\n```", color=discord.Color.blue())
+    async def setpostingtime(self, ctx, *, wantedtime):
+                embed = discord.Embed(description=f"```yaml\nApplying this post time into database:\n{wantedtime}\n```", color=discord.Color.blue())
                 timedb.delete_many({})
                 time.sleep(5)
-                newvalue = {"time":str(timee)}
-                timedb.insert_one(newvalue)
+                newtimevalue = {"time":str(wantedtime)}
+                timedb.insert_one(newtimevalue)
                 await ctx.send(embed=embed)
-                print("This time set in database:", timee)   
+                print("This time set in database:", wantedtime)   
                 
 #   View UTC time
 

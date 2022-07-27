@@ -1,8 +1,5 @@
-import logging
-import discord
 import os
-import datetime
-from discord.ext import commands, tasks
+from discord.ext import commands
 
 
 bot = commands.Bot(command_prefix="!")
@@ -46,10 +43,5 @@ for filename in os.listdir('cogs'):
 # ERROR HANDLING
 # Roll cmd or similar to change tip if it was too early to post same tip again, for example via react
 # Make customstatus roll each 30seconds
-# Figure out how to check database with loop less than each second lol(CURRENTLY WORKING FROM FILE)
-# Sort the fuqn one-by-one tiplist, SOMETHIGN WITH PAGINATION
-# alphabetical order for database request
-
-
 
 bot.run(token)
