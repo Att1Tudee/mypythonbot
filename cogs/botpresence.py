@@ -1,14 +1,14 @@
 import discord
 from discord.ext import commands
 
-class Botstatus(commands.Cog):
+class Botpresence(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print('Botstatus is online.')
+        print('Botpresence is online.')
 
     @commands.command()
     @commands.has_permissions(manage_messages=True)
@@ -72,4 +72,4 @@ class Botstatus(commands.Cog):
         await self.bot.change_presence(activity=discord.Game(name=status))
 
 def setup(bot):
-    bot.add_cog(Botstatus(bot))
+    bot.add_cog(Botpresence(bot))

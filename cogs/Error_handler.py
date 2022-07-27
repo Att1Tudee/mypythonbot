@@ -56,10 +56,8 @@ class CommandErrorHandler(commands.Cog):
             return
         if isinstance(error, commands.MissingPermissions):
             await ctx.send("You are missing permissions")
-            await ctx.message.delete()
         elif isinstance(error, commands.MissingRequiredArgument):
             await ctx.send("You are missing an argument")
-            await ctx.message.delete()
         if isinstance(error, commands.DisabledCommand):
             await ctx.send(f'{ctx.command} has been disabled.')
             
@@ -104,7 +102,6 @@ class CommandErrorHandler(commands.Cog):
         if isinstance(error, commands.MissingRequiredArgument):
             if error.param.name == 'inp':
                 await ctx.send("You forgot to give me input to repeat!")
-
 
 def setup(bot):
     bot.add_cog(CommandErrorHandler(bot))
